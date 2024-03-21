@@ -17,8 +17,16 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 
+/**
+ * Класс конвертера для расшифровки сообщений от станции
+ */
 public class Mr231_3Converter implements SearadarExchangeConverter {
 
+    /**
+     * DISTANCE_SCALE - статичный массив чисел шкалы дальности
+     * fields - строковый массив для хранения разобранного сообщения
+     * msgType - строковая переменная для хранения типа сообщения от станции
+     */
     private static final Double[] DISTANCE_SCALE = {0.125, 0.25, 0.5, 1.5, 3.0, 6.0, 12.0, 24.0, 48.0, 96.0};
 
     private String[] fields;
@@ -29,6 +37,11 @@ public class Mr231_3Converter implements SearadarExchangeConverter {
         return convert(exchange.getIn().getBody(String.class));
     }
 
+    /**
+     * Функция convert принимает сообщение от станции и разбирает его
+     * @param message - сообщение от станции
+     * @return - разобранное сообщение от станции
+     */
     public List<SearadarStationMessage> convert(String message) {
         List<SearadarStationMessage> msgList = new ArrayList<>();
 
@@ -50,6 +63,11 @@ public class Mr231_3Converter implements SearadarExchangeConverter {
         return msgList;
     }
 
+    /**
+     * Функция readFields разбивает полученное сообщение на строки записывает в переменную fields
+     * В переменную msgType записывается тип сообщения от станции
+     * @param msg - сообщение от станции
+     */
     private void readFields(String msg) {
 
         String temp = msg.substring(3, msg.indexOf("*")).trim();
@@ -58,6 +76,10 @@ public class Mr231_3Converter implements SearadarExchangeConverter {
         msgType = fields[0];
     }
 
+    /**
+     * Функция getTTM разбирает формуляр цели, полученный от станции
+     * @return - возвращение расшифрованного сообщения
+     */
     private TrackedTargetMessage getTTM() {
         TrackedTargetMessage ttm = new TrackedTargetMessage();
         Long msgRecTimeMills = System.currentTimeMillis();
@@ -67,6 +89,9 @@ public class Mr231_3Converter implements SearadarExchangeConverter {
         IFF iff = IFF.UNKNOWN;
         TargetType targetType = TargetType.UNKNOWN;
 
+        /**
+         * Статус цели
+         */
         switch (fields[12]) {
             case "L":
                 status = TargetStatus.LOST;
@@ -79,6 +104,9 @@ public class Mr231_3Converter implements SearadarExchangeConverter {
                 break;
         }
 
+        /**
+         * Признак опознавания цели
+         */
         switch (fields[11]) {
             case "b":
                 iff = IFF.FRIEND;
@@ -105,6 +133,10 @@ public class Mr231_3Converter implements SearadarExchangeConverter {
         return ttm;
     }
 
+    /**
+     * Функция getRSD разбирает формуляр состояния НРЛС, полученный от станции
+     * @return - возвращение расшифрованного сообщения
+     */
     private RadarSystemDataMessage getRSD() {
         RadarSystemDataMessage rsd = new RadarSystemDataMessage();
 
@@ -123,11 +155,19 @@ public class Mr231_3Converter implements SearadarExchangeConverter {
         return rsd;
     }
 
+    /**
+     * Функция для проверки валидности RSD сообщения станции
+     * @param rsd - RSD сообщение от станции
+     * @return - Если сообщение валидно - null, если нет - сообщение об ошибке и указание шкалы дальности
+     */
     private InvalidMessage checkRSD(RadarSystemDataMessage rsd) {
 
         InvalidMessage invalidMessage = new InvalidMessage();
         String infoMsg = "";
 
+        /**
+         * Если шкала дальности rsd не соответствует ни одному элементу массива DISTANCE_SCALE, то выдаём сообщение об ошибке
+         */
         if (!Arrays.asList(DISTANCE_SCALE).contains(rsd.getDistanceScale())) {
             infoMsg = "RDS message. Wrong distance scale value: " + rsd.getDistanceScale();
             invalidMessage.setInfoMsg(infoMsg);
