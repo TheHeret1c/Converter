@@ -6,6 +6,13 @@
   <artifactId>startApp</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
 
     <dependencies>
         <dependency>
@@ -28,11 +35,39 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>11.0.2</version>
-        </dependency>
+<!--        &lt;!&ndash; JavaFX Controls &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-controls</artifactId>-->
+<!--            <version>11.0.2</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; JavaFX FXML &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-fxml</artifactId>-->
+<!--            <version>11.0.2</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; JavaFX Graphics &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-graphics</artifactId>-->
+<!--            <version>11.0.2</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; JavaFX Base &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-base</artifactId>-->
+<!--            <version>11.0.2</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.example</groupId>-->
+<!--            <artifactId>javafx-sdk</artifactId>-->
+<!--            <version>1.3.1</version>-->
+<!--            <scope>system</scope>-->
+<!--            <systemPath>javafx-rt-windows-i586-1_3_1.jar</systemPath>-->
+<!--        </dependency>-->
+
     </dependencies>
     <build>
         <plugins>

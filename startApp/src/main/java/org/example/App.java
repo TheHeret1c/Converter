@@ -59,5 +59,8 @@ public class App {
         searadarMessages.forEach(System.out::println);
         searadarMessages = converter.convert(mr231_3_RSD);
         searadarMessages.forEach(System.out::println);
+
+        SwingApp app = new SwingApp();
+        app.setVisible(true);
     }
 }

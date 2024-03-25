@@ -24,14 +24,6 @@
                     <target>8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.3</version>
-                <configuration>
-                    <mainClass>org.example.FXApp</mainClass>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
