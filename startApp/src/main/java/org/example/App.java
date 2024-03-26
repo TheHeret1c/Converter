@@ -1,11 +1,14 @@
 package org.example;
 
+import org.database.DBWorker;
 import org.example.searadar.mr231.convert.Mr231Converter;
 import org.example.searadar.mr231.station.Mr231StationType;
 import org.example.searadar.mr231_3.convert.Mr231_3Converter;
 import org.example.searadar.mr231_3.station.Mr231_3StationType;
 import ru.oogis.searadar.api.message.SearadarStationMessage;
 
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +34,18 @@ import java.util.List;
  */
 
 public class App {
+
+    private static ArrayList<String> messages;
+    private static Statement statement;
+    private static ResultSet resultSet;
+    private static PreparedStatement preparedStatement;
+    private static final String INSERT_NEW = "INSERT INTO Message (Message) VALUES(?)";
+
+    private static final Mr231_3StationType mr231_3 = new Mr231_3StationType();
+    private static final Mr231_3Converter mr231_3Converter = mr231_3.createConverter();
+
+    private static List<SearadarStationMessage> searadarMessages;
+
     public static void main(String[] args) {
         // Контрольный пример для МР-231
         String mr231_TTM = "$RATTM,66,28.71,341.1,T,57.6,024.5,T,0.4,4.1,N,b,L,,457362,А*42";
@@ -40,7 +55,7 @@ public class App {
         // Проверка работы конвертера
         Mr231StationType mr231 = new Mr231StationType();
         Mr231Converter converter = mr231.createConverter();
-        List<SearadarStationMessage> searadarMessages = converter.convert(mr231_TTM);
+        searadarMessages = converter.convert(mr231_TTM);
         searadarMessages.forEach(System.out::println);
         searadarMessages = converter.convert(mr231_VHW);
         searadarMessages.forEach(System.out::println);
@@ -53,14 +68,119 @@ public class App {
         String mr231_3_RSD = "$RARSD,4.5,0.0,5.1,9.5,,,,,7.5,125.1,12.0,N,H,P*20";
 
         // Проверка работы конвертера МР-231-3
-        Mr231_3StationType mr231_3 = new Mr231_3StationType();
-        Mr231_3Converter mr231_3Converter = mr231_3.createConverter();
-        searadarMessages = converter.convert(mr231_3_TTM);
+        searadarMessages = mr231_3Converter.convert(mr231_3_TTM);
         searadarMessages.forEach(System.out::println);
-        searadarMessages = converter.convert(mr231_3_RSD);
+        searadarMessages = mr231_3Converter.convert(mr231_3_RSD);
         searadarMessages.forEach(System.out::println);
 
-        SwingApp app = new SwingApp();
-        app.setVisible(true);
+        //ToDo...
+//        getMessages();
+//
+//        SwingApp app = new SwingApp(messages);
+//        app.setVisible(true);
     }
+
+    /**
+     * Функция для получения всех сообщений из бд
+     */
+    private static void getMessages() {
+        // Создаём объект бд
+        DBWorker worker = new DBWorker();
+
+        String query = "select Message from Message";
+        //sendQuery(query);
+
+        // выполнение запроса к бд
+        try {
+            statement = worker.getConnection().createStatement();
+            resultSet = statement.executeQuery(query);
+
+            messages.clear();
+            while (resultSet.next()) {
+                messages.add(resultSet.getString(2));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally { // после выполнения запроса закрываем соединение с бд
+            try { worker.getConnection().close(); } catch(SQLException se) { /*can't do anything */ }
+            try { statement.close(); } catch(SQLException se) { /*can't do anything */ }
+            try { resultSet.close(); } catch(SQLException se) { /*can't do anything */ }
+        }
+    }
+
+    /**
+     * Функция для проверки сообщений на существование в бд
+     * если сообщение новое, то добавляем в бд
+     * @param message - сообщение станции
+     */
+    public static void checkMessageForUnique(String message) {
+        // Если сообщение уже было, то пропускаем
+        if (messages.contains(message))
+            return;
+
+        //messages.add(message);
+
+        // Создаём объект бд
+        DBWorker worker = new DBWorker();
+
+        // выполнение запроса к бд
+        try {
+            preparedStatement = worker.getConnection().prepareStatement(INSERT_NEW);
+            preparedStatement.setString(1, message);
+
+            preparedStatement.execute();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally { // после выполнения запроса закрываем соединение с бд
+            try { worker.getConnection().close(); } catch(SQLException se) { /*can't do anything */ }
+            try { preparedStatement.close(); } catch(SQLException se) { /*can't do anything */ }
+        }
+    }
+
+    /**
+     * Функция для запроса всех сообщений из бд
+     * (если при конвертации сообщение было новым и только добавлено в бд,
+     * то запрашиваем вновь все сообщения для отображения в ComboBox)
+     * @return - ранее конвертированные сообщения из бд
+     */
+    public static ArrayList<String> getNewMessages() {
+        getMessages();
+        return messages;
+    }
+
+    /**
+     * Функция конвертации сообщений. Вызывается из графического интерфейса
+     * @param message - сообщение от станции
+     * @return - конвертированное сообщение
+     */
+    public static StringBuilder convertMessage(String message) {
+
+        searadarMessages = mr231_3Converter.convert(message);
+
+        StringBuilder sb = new StringBuilder();
+        for (SearadarStationMessage msg : searadarMessages) {
+            sb.append(msg.toString()).append("\n");
+        }
+        return sb;
+    }
+
+
+    //    private static void sendQuery(String query) {
+//        DBWorker worker = new DBWorker();
+//        try {
+//            statement = worker.getConnection().createStatement();
+//            resultSet = statement.executeQuery(query);
+//
+//            messages.clear();
+//            while (resultSet.next()) {
+//                messages.add(resultSet.getString(2));
+//            }
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        } finally {
+//            try { worker.getConnection().close(); } catch(SQLException se) { /*can't do anything */ }
+//            try { statement.close(); } catch(SQLException se) { /*can't do anything */ }
+//            try { resultSet.close(); } catch(SQLException se) { /*can't do anything */ }
+//        }
+//    }
 }
