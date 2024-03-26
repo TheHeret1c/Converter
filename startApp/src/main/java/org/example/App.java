@@ -35,7 +35,7 @@ import java.util.List;
 
 public class App {
 
-    private static ArrayList<String> messages;
+    private static ArrayList<String> messages = new ArrayList<>();
     private static Statement statement;
     private static ResultSet resultSet;
     private static PreparedStatement preparedStatement;
@@ -76,8 +76,10 @@ public class App {
         //ToDo...
 //        getMessages();
 //
-//        SwingApp app = new SwingApp(messages);
-//        app.setVisible(true);
+        messages.add("$RATTM,45,15.21,245.7,T,34.7,124.1,T,2.2,10.5,N,d,Q,,785146,A*42");
+        messages.add("$RARSD,4.5,0.0,5.1,9.5,,,,,7.5,125.1,12.0,N,H,P*20");
+        SwingApp app = new SwingApp(messages);
+        app.setVisible(true);
     }
 
     /**

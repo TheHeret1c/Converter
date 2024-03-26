@@ -30,51 +30,105 @@ public class SwingApp extends JFrame {
     //ToDo...
 
     private JButton btn = new JButton("Press");
-    private JTextField input = new JTextField("", 5);
+    private JTextField input = new JTextField("", 50);
     private JLabel label = new JLabel("Input:");
-    private JRadioButton rb1 = new JRadioButton("Male");
-    private JRadioButton rb2 = new JRadioButton("Female");
+    private JRadioButton rbInput = new JRadioButton("Ручной ввод");
+    private JRadioButton rbDatabase = new JRadioButton("Из БД");
     private JCheckBox chkbox = new JCheckBox("Check", false);
 
 
+    private JLabel lType = new JLabel("Выберите ввод:");
+    private JLabel lInput = new JLabel("Введите сообщение:");
+    private JLabel lCombo = new JLabel("Выберите сообщение:");
     private JButton btnConvert = new JButton("Конвертировать");
-    private JTextField tfMessage = new JTextField();
+    private JTextField tfMessage = new JTextField("", 5);
     private JLabel lMessage = new JLabel("Сообщение:");
-    private JComboBox cbMessages = new JComboBox();
+    private JComboBox cbMessages;
+    private JPanel cbPanel = new JPanel();
+    private JPanel tfPanel = new JPanel();
+    private JPanel rbPanel = new JPanel();
+    private JPanel btnPanel = new JPanel();
+
+    private JPanel cont = new JPanel();
 
     public SwingApp(ArrayList<String> messages) {
 
         //ToDo...
 
         super("Simple Example");
-        this.setSize(300, 300);
+        this.setSize(800, 150);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
-
-        Container container = this.getContentPane();
-        container.setLayout(new GridLayout(3, 2, 2, 2));
-        container.add(label);
-        container.add(input);
-
         ButtonGroup group = new ButtonGroup();
-        group.add(rb1);
-        group.add(rb2);
-        container.add(rb1);
-        rb1.setSelected(true);
-        container.add(rb2);
+        group.add(rbInput);
+        group.add(rbDatabase);
 
-        container.add(chkbox);
-
-        btn.addActionListener(e -> {
-            String message = "";
-            message += "Button was pressed\n";
-            message += "Text is " + input.getText() + "\n";
-            message += (rb1.isSelected() ? "Radio 1" : "Radio 2") + " is selected!\n";
-            message += "CheckBox is " + ((chkbox.isSelected()) ? "checked" : "unchecked");
-            JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
+        rbInput.addActionListener(e -> {
+            if (rbInput.isSelected()) {
+                tfPanel.setVisible(true);
+                cbPanel.setVisible(false);
+            }
         });
-        container.add(btn);
+        rbDatabase.addActionListener(e -> {
+            if (rbDatabase.isSelected()) {
+                tfPanel.setVisible(false);
+                cbPanel.setVisible(true);
+            }
+        });
+
+        cbPanel.setVisible(false);
+        rbPanel.add(lType);
+        rbPanel.add(rbInput);
+        rbInput.setSelected(true);
+        rbPanel.add(rbDatabase);
+        this.getContentPane().add(BorderLayout.NORTH, rbPanel);
+
+        tfMessage.setColumns(50);
+        tfPanel.add(lInput);
+        tfPanel.add(tfMessage);
+        //this.getContentPane().add(BorderLayout.BEFORE_FIRST_LINE, tfPanel);
+        cont.add(BorderLayout.NORTH, tfPanel);
+
+        cbMessages = new JComboBox(messages.toArray());
+        cbPanel.add(lCombo);
+        cbPanel.add(cbMessages);
+        //this.getContentPane().add(BorderLayout.CENTER, cbPanel);
+        cont.add(BorderLayout.SOUTH, cbPanel);
+        this.getContentPane().add(BorderLayout.CENTER, cont);
+
+        btnConvert.addActionListener(e -> {
+
+        });
+        btnPanel.add(btnConvert);
+        this.getContentPane().add(BorderLayout.SOUTH, btnPanel);
+
+//        cbMessages = new JComboBox<>(messages.toArray());
+//
+//        Container container = this.getContentPane();
+//        container.setLayout(new GridLayout(4, 2, 2, 2));
+//        container.add(label);
+//        container.add(input);
+//
+//        ButtonGroup group = new ButtonGroup();
+//        group.add(rb1);
+//        group.add(rb2);
+//        container.add(rb1);
+//        rb1.setSelected(true);
+//        container.add(rb2);
+//
+//        container.add(chkbox);
+//
+//        btn.addActionListener(e -> {
+//            String message = "";
+//            message += "Button was pressed\n";
+//            message += "Text is " + input.getText() + "\n";
+//            message += (rb1.isSelected() ? "Radio 1" : "Radio 2") + " is selected!\n";
+//            message += "CheckBox is " + ((chkbox.isSelected()) ? "checked" : "unchecked");
+//            JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
+//        });
+//        container.add(btn);
+//        container.add(cbMessages);
     }
 
 //    class ButtonEventListener implements ActionListener {

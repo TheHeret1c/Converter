@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Initialize JavaFX">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../startApp/src/main/java/org/database/DBWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../startApp/src/main/resources/lib/mysql-connector-j-8.3.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Creating functions for working with the gui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mr-231-3/src/main/java/org/example/searadar/mr231_3/convert/Mr231_3Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mr-231-3/src/main/java/org/example/searadar/mr231_3/convert/Mr231_3Converter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../startApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../startApp/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../startApp/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../startApp/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../startApp/src/main/java/org/example/SwingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../startApp/src/main/java/org/example/SwingApp.java" afterDir="false" />
     </list>
@@ -162,7 +156,7 @@
       <workItem from="1711211472138" duration="154000" />
       <workItem from="1711293838617" duration="11612000" />
       <workItem from="1711370427862" duration="1754000" />
-      <workItem from="1711379703553" duration="11430000" />
+      <workItem from="1711379703553" duration="17740000" />
     </task>
     <task id="LOCAL-00001" summary="JUnit for Mr231_3Convert">
       <option name="closed" value="true" />
@@ -180,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711295296030</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creating functions for working with the gui">
+      <option name="closed" value="true" />
+      <created>1711413517461</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711413517461</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +191,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JUnit for Mr231_3Convert" />
     <MESSAGE value="Initialize JavaFX" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialize JavaFX" />
+    <MESSAGE value="Creating functions for working with the gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating functions for working with the gui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
