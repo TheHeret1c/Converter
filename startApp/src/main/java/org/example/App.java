@@ -35,11 +35,11 @@ import java.util.List;
 
 public class App {
 
-    private static ArrayList<String> messages = new ArrayList<>();
-    private static Statement statement;
-    private static ResultSet resultSet;
-    private static PreparedStatement preparedStatement;
-    private static final String INSERT_NEW = "INSERT INTO Message (Message) VALUES(?)";
+    private static ArrayList<String> messages = new ArrayList<>(); // Лист с сообщениями из базы
+    private static Statement statement; // Переменная для совершения запросов к БД
+    private static ResultSet resultSet; // Переменная для получения результата запроса БД
+    private static PreparedStatement preparedStatement; // Переменная для совершения запросов к БД
+    private static final String INSERT_NEW = "INSERT INTO Message (Message) VALUES(?)"; // SQL запрос к БД
 
     private static final Mr231_3StationType mr231_3 = new Mr231_3StationType();
     private static final Mr231_3Converter mr231_3Converter = mr231_3.createConverter();
@@ -73,11 +73,9 @@ public class App {
         searadarMessages = mr231_3Converter.convert(mr231_3_RSD);
         searadarMessages.forEach(System.out::println);
 
-        //ToDo...
-//        getMessages();
-//
-        messages.add("$RATTM,45,15.21,245.7,T,34.7,124.1,T,2.2,10.5,N,d,Q,,785146,A*42");
-        messages.add("$RARSD,4.5,0.0,5.1,9.5,,,,,7.5,125.1,12.0,N,H,P*20");
+
+        getMessages();
+
         SwingApp app = new SwingApp(messages);
         app.setVisible(true);
     }
@@ -99,7 +97,7 @@ public class App {
 
             messages.clear();
             while (resultSet.next()) {
-                messages.add(resultSet.getString(2));
+                messages.add(resultSet.getString(1));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

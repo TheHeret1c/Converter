@@ -2,68 +2,54 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
-import org.example.App;
-
+/**
+ * Класс для создания графического интерфейса Swing и обработки событий.
+ * Он предоставляет окно для конвертации сообщений, позволяя выбирать способ ввода сообщения
+ * (ручной ввод или выбор из списка в базе данных) и выполнять конвертацию сообщения.
+ * Также обновляет список сообщений для выбора в комбобоксе после каждой конвертации.
+ */
 public class SwingApp extends JFrame {
 
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(() -> {
-//            JFrame frame = new JFrame("My Swing App");
-//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//
-//            JButton button = new JButton("Click Me!");
-//            button.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Button Clicked!"));
-//
-//            frame.getContentPane().add(button);
-//            frame.pack();
-//            frame.setVisible(true);
-//        });
-//    }
 
-    //ToDo...
-
-    private JButton btn = new JButton("Press");
-    private JTextField input = new JTextField("", 50);
-    private JLabel label = new JLabel("Input:");
-    private JRadioButton rbInput = new JRadioButton("Ручной ввод");
-    private JRadioButton rbDatabase = new JRadioButton("Из БД");
-    private JCheckBox chkbox = new JCheckBox("Check", false);
-
-
-    private JLabel lType = new JLabel("Выберите ввод:");
-    private JLabel lInput = new JLabel("Введите сообщение:");
-    private JLabel lCombo = new JLabel("Выберите сообщение:");
-    private JButton btnConvert = new JButton("Конвертировать");
-    private JTextField tfMessage = new JTextField("", 5);
-    private JLabel lMessage = new JLabel("Сообщение:");
-    private JComboBox cbMessages;
-    private JPanel cbPanel = new JPanel();
-    private JPanel tfPanel = new JPanel();
-    private JPanel rbPanel = new JPanel();
-    private JPanel btnPanel = new JPanel();
-
-    private JPanel cont = new JPanel();
-
+    /**
+     * Конструктор окна конвертации
+     * @param messages - лист с сообщениями из БД
+     */
     public SwingApp(ArrayList<String> messages) {
 
-        //ToDo...
-
-        super("Simple Example");
+        // Настройка окна
+        super("Конвертация сообщений");
         this.setSize(800, 150);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
+
+        // Объекты формы
+        JRadioButton rbInput = new JRadioButton("Ручной ввод");
+        JRadioButton rbDatabase = new JRadioButton("Из БД");
+        JLabel lType = new JLabel("Выберите ввод:");
+        JLabel lInput = new JLabel("Введите сообщение:");
+        JLabel lCombo = new JLabel("Выберите сообщение:");
+        JButton btnConvert = new JButton("Конвертировать");
+        JTextField tfMessage = new JTextField("", 5);
+        JComboBox cbMessages = new JComboBox(messages.toArray());
+
+        // Контейнеры для объектов
+        JPanel cbPanel = new JPanel();
+        JPanel tfPanel = new JPanel();
+        JPanel rbPanel = new JPanel();
+        JPanel btnPanel = new JPanel();
+
+        JPanel cont = new JPanel(); // контейнер для контейнеров текстового поля и комбобокса, чтобы отображалось по центру
+
+        // Создание группы радиобаттонов
         ButtonGroup group = new ButtonGroup();
         group.add(rbInput);
         group.add(rbDatabase);
 
+        // События радиобаттонов (выбор ручного ввода/сообщения из БД)
         rbInput.addActionListener(e -> {
             if (rbInput.isSelected()) {
                 tfPanel.setVisible(true);
@@ -77,6 +63,7 @@ public class SwingApp extends JFrame {
             }
         });
 
+        // Добавление радиобаттонов в контейнер и добавление на форму
         cbPanel.setVisible(false);
         rbPanel.add(lType);
         rbPanel.add(rbInput);
@@ -84,22 +71,38 @@ public class SwingApp extends JFrame {
         rbPanel.add(rbDatabase);
         this.getContentPane().add(BorderLayout.NORTH, rbPanel);
 
+        // Добавление поля для ручного ввода сообщения в контейнер и на форму
         tfMessage.setColumns(50);
         tfPanel.add(lInput);
         tfPanel.add(tfMessage);
-        //this.getContentPane().add(BorderLayout.BEFORE_FIRST_LINE, tfPanel);
         cont.add(BorderLayout.NORTH, tfPanel);
 
-        cbMessages = new JComboBox(messages.toArray());
+        // Добавление комбобокса для выбора сообщений из БД в контейнер и вывод на форму
         cbPanel.add(lCombo);
         cbPanel.add(cbMessages);
-        //this.getContentPane().add(BorderLayout.CENTER, cbPanel);
         cont.add(BorderLayout.SOUTH, cbPanel);
         this.getContentPane().add(BorderLayout.CENTER, cont);
 
+        // Событие кнопки "Конвертировать"
         btnConvert.addActionListener(e -> {
+            // Определяем выбранный тип ввода
+            if (rbInput.isSelected()) {
+                showMessage(App.convertMessage(tfMessage.getText()));
+            } else {
+                showMessage(App.convertMessage((String) cbMessages.getSelectedItem()));
+            }
+            // Проверка сообщения на уникальность
+            App.checkMessageForUnique(tfMessage.getText());
 
+            // Загрузка нового списка сообщений в комбобокс
+            cbMessages.removeAllItems();
+            ArrayList<String> newMessages = App.getNewMessages();
+            for (String message : newMessages) {
+                cbMessages.addItem(message);
+            }
         });
+
+        // Добавление кнопки в контейнер и на форму
         btnPanel.add(btnConvert);
         this.getContentPane().add(BorderLayout.SOUTH, btnPanel);
 
@@ -141,4 +144,12 @@ public class SwingApp extends JFrame {
 //            JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
 //        }
 //    }
+
+    /**
+     * Функция для отображения диалогового окна с конвертированным сообщением
+     * @param sb - строка с сообщением для отображения
+     */
+    private void showMessage(StringBuilder sb) {
+        JOptionPane.showMessageDialog(null, sb, "Сообщение", JOptionPane.PLAIN_MESSAGE);
+    }
 }
