@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="The graphical interface is combined with the functional part">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/build_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b0fe2949-90af-4085-8d30-38f96a399cf6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b0fe2949-90af-4085-8d30-38f96a399cf6.xml" afterDir="false" />
+    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Build">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,6 +176,7 @@
       <workItem from="1711379703553" duration="22521000" />
       <workItem from="1711533454332" duration="1778000" />
       <workItem from="1711536726812" duration="66000" />
+      <workItem from="1711539722930" duration="4235000" />
     </task>
     <task id="LOCAL-00001" summary="JUnit for Mr231_3Convert">
       <option name="closed" value="true" />
@@ -221,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711479078116</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Build">
+      <option name="closed" value="true" />
+      <created>1711540102163</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711540102163</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +249,8 @@
     <MESSAGE value="Creating functions for working with the gui" />
     <MESSAGE value="GUI" />
     <MESSAGE value="The graphical interface is combined with the functional part" />
-    <option name="LAST_COMMIT_MESSAGE" value="The graphical interface is combined with the functional part" />
+    <MESSAGE value="Build" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
