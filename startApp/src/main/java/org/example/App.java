@@ -92,6 +92,8 @@ public class App {
 
         // выполнение запроса к бд
         try {
+            if (worker.getConnection() == null)
+                return;
             statement = worker.getConnection().createStatement();
             resultSet = statement.executeQuery(query);
 
@@ -100,11 +102,26 @@ public class App {
                 messages.add(resultSet.getString(1));
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.err.println("Ошибка при подключении к базе данных: " + ex.getMessage());
         } finally { // после выполнения запроса закрываем соединение с бд
-            try { worker.getConnection().close(); } catch(SQLException se) { /*can't do anything */ }
-            try { statement.close(); } catch(SQLException se) { /*can't do anything */ }
-            try { resultSet.close(); } catch(SQLException se) { /*can't do anything */ }
+            try {
+                if (worker.getConnection() != null)
+                    worker.getConnection().close();
+            } catch(SQLException se) {
+                System.err.println("Ошибка при закрытии соединения с базой данных: " + se.getMessage());
+            }
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch(SQLException se) {
+                System.err.println("Ошибка при закрытии запроса: " + se.getMessage());
+            }
+            try {
+                if (resultSet != null)
+                    resultSet.close();
+            } catch(SQLException se) {
+                System.err.println("Ошибка при закрытии результата: " + se.getMessage());
+            }
         }
     }
 
@@ -130,10 +147,20 @@ public class App {
 
             preparedStatement.execute();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.err.println("Ошибка при подключении к базе данных: " + ex.getMessage());
         } finally { // после выполнения запроса закрываем соединение с бд
-            try { worker.getConnection().close(); } catch(SQLException se) { /*can't do anything */ }
-            try { preparedStatement.close(); } catch(SQLException se) { /*can't do anything */ }
+            try {
+                if (worker.getConnection() != null)
+                    worker.getConnection().close();
+            } catch(SQLException se) {
+                System.err.println("Ошибка при закрытии соединения с базой данных: " + se.getMessage());
+            }
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } catch(SQLException se) {
+                System.err.println("Ошибка при закрытии запроса: " + se.getMessage());
+            }
         }
     }
 
