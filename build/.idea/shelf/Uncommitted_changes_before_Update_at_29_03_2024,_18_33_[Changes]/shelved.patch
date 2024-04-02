@@ -1,0 +1,98 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ArtifactsWorkspaceSettings\">\n    <artifacts-to-build>\n      <artifact name=\"build:jar\" />\n    </artifacts-to-build>\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"17592a85-f40b-4e39-a83a-3f9cf1dec500\" name=\"Changes\" comment=\"Build\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/artifacts/build_jar.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/out/artifacts/build_jar/build.jar\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/artifacts/build_jar/build.jar\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/../startApp/src/main/java/org/database/Main.java\" beforeDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"JavaFXApplication\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;TheHeret1c&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"50a191f2-eccd-49a7-aed0-00233b72c98f\" />\n        <option name=\"url\" value=\"https://github.com/TheHeret1c/Converter\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 7\n}</component>\n  <component name=\"ProjectId\" id=\"2bInU4QBSdDgW7tdplIYSY81WIw\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Application.App.executor&quot;: &quot;Run&quot;,\n    &quot;Application.FXApp.executor&quot;: &quot;Run&quot;,\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\n    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,\n    &quot;JUnit.Test.executor&quot;: &quot;Run&quot;,\n    &quot;Maven.build [clean,install].executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/user/IdeaProjects/Converter/startApp/src/main/resources/lib/mysql-connector-j-8.3.0.jar&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  },\n  &quot;keyToStringList&quot;: {\n    &quot;DatabaseDriversLRU&quot;: [\n      &quot;mysql&quot;\n    ]\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/../startApp/src/main/resources/lib\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.App\">\n    <configuration name=\"App\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"1.8 (2)\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.App\" />\n      <module name=\"startApp\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"org.example.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"FXApp\" type=\"Application\" factoryName=\"Application\">\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"$USER_HOME$/Downloads/javafx_sdk-1_3_1-b05a-windows-i586/javafx-sdk1.3\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.FXApp\" />\n      <module name=\"startApp\" />\n      <option name=\"VM_PARAMETERS\" value=\"--module-path $MAVEN_REPOSITORY$/org/openjfx --add-modules javafx.controls,javafx.fxml\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\">\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"1.8 (2)\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.database.Main\" />\n      <module name=\"startApp\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Test\" type=\"JUnit\" factoryName=\"JUnit\">\n      <module name=\"mr-231-3\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"1.8 (2)\" />\n      <option name=\"PACKAGE_NAME\" value=\"org.example.searadar.mr231_3.convert\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.searadar.mr231_3.convert.Mr231_3ConvertTest\" />\n      <option name=\"METHOD_NAME\" value=\"\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\"Application.Unnamed\" />\n      <item itemvalue=\"Application.FXApp\" />\n      <item itemvalue=\"Application.Main\" />\n      <item itemvalue=\"Application.App\" />\n      <item itemvalue=\"JUnit.Test\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.App\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-a39a91d7\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"17592a85-f40b-4e39-a83a-3f9cf1dec500\" name=\"Changes\" comment=\"\" />\n      <created>1705911473798</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1705911473798</updated>\n      <workItem from=\"1705911476607\" duration=\"2562000\" />\n      <workItem from=\"1705915063167\" duration=\"628000\" />\n      <workItem from=\"1711055683323\" duration=\"171000\" />\n      <workItem from=\"1711056033554\" duration=\"40000\" />\n      <workItem from=\"1711107718430\" duration=\"7969000\" />\n      <workItem from=\"1711211472138\" duration=\"154000\" />\n      <workItem from=\"1711293838617\" duration=\"11612000\" />\n      <workItem from=\"1711370427862\" duration=\"1754000\" />\n      <workItem from=\"1711379703553\" duration=\"22521000\" />\n      <workItem from=\"1711533454332\" duration=\"1778000\" />\n      <workItem from=\"1711536726812\" duration=\"66000\" />\n      <workItem from=\"1711539722930\" duration=\"4424000\" />\n      <workItem from=\"1711544709848\" duration=\"16000\" />\n      <workItem from=\"1711545973939\" duration=\"808000\" />\n      <workItem from=\"1711548787620\" duration=\"2299000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"JUnit for Mr231_3Convert\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1711294192566</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1711294192566</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Initialize JavaFX\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1711295296030</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1711295296030</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Creating functions for working with the gui\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1711413517461</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1711413517461</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"GUI\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1711475053612</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1711475053612</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"The graphical interface is combined with the functional part\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1711479078116</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1711479078116</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Build\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1711540102163</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1711540102163</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Build\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1711544669582</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1711544669582</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"8\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"JUnit for Mr231_3Convert\" />\n    <MESSAGE value=\"Initialize JavaFX\" />\n    <MESSAGE value=\"Creating functions for working with the gui\" />\n    <MESSAGE value=\"GUI\" />\n    <MESSAGE value=\"The graphical interface is combined with the functional part\" />\n    <MESSAGE value=\"Build\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Build\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/../startApp/src/main/java/org/example/App.java</url>\n          <line>55</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a189bbdb9d94eb9d0d851ce3f5f529cf8746a01b)
++++ b/.idea/workspace.xml	(date 1711726359588)
+@@ -9,12 +9,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Build">
+-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/build_jar.xml" beforeDir="false" />
++    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Working build">
++      <change afterPath="$PROJECT_DIR$/out/artifacts/build_jar/Dockerfile" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/artifacts/build_jar/build.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/build_jar/build.jar" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../startApp/src/main/java/org/database/Main.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -26,6 +23,7 @@
+       <list>
+         <option value="JavaFXApplication" />
+         <option value="Class" />
++        <option value="Dockerfile" />
+       </list>
+     </option>
+   </component>
+@@ -183,7 +181,7 @@
+       <workItem from="1711539722930" duration="4424000" />
+       <workItem from="1711544709848" duration="16000" />
+       <workItem from="1711545973939" duration="808000" />
+-      <workItem from="1711548787620" duration="2299000" />
++      <workItem from="1711548787620" duration="3723000" />
+     </task>
+     <task id="LOCAL-00001" summary="JUnit for Mr231_3Convert">
+       <option name="closed" value="true" />
+@@ -241,7 +239,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1711544669582</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="Working build">
++      <option name="closed" value="true" />
++      <created>1711564965920</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1711564965920</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -265,7 +271,8 @@
+     <MESSAGE value="GUI" />
+     <MESSAGE value="The graphical interface is combined with the functional part" />
+     <MESSAGE value="Build" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Build" />
++    <MESSAGE value="Working build" />
++    <option name="LAST_COMMIT_MESSAGE" value="Working build" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: out/artifacts/build_jar/Dockerfile
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/build_jar/Dockerfile b/out/artifacts/build_jar/Dockerfile
+new file mode 100644
+--- /dev/null	(date 1711566676261)
++++ b/out/artifacts/build_jar/Dockerfile	(date 1711566676261)
+@@ -0,0 +1,18 @@
++# Используем базовый образ
++FROM piegsaj/oracle-jre:latest
++LABEL authors="TheHeret1c"
++
++# Устанавливаем переменную окружения для порта базы данных
++ENV DB_PORT=3306
++
++# Копируем собранный JAR файл внутрь образа
++COPY build.jar /app/build.jar
++
++# Определяем рабочую директорию
++WORKDIR /app
++
++# Определяем команду для запуска приложения
++CMD ["java", "-jar", "build.jar"]
++
++# Открываем порт для базы данных
++EXPOSE 3306
+\ No newline at end of file

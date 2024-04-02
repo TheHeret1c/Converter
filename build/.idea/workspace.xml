@@ -9,12 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Build">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/build_jar.xml" beforeDir="false" />
+    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Working build">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/build_jar/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/build_jar/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b0fe2949-90af-4085-8d30-38f96a399cf6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b0fe2949-90af-4085-8d30-38f96a399cf6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/build_jar/build.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/build_jar/build.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../startApp/src/main/java/org/database/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../startApp/src/main/java/org/database/DBWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../startApp/src/main/java/org/database/DBWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,7 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -72,7 +77,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
@@ -183,7 +188,10 @@
       <workItem from="1711539722930" duration="4424000" />
       <workItem from="1711544709848" duration="16000" />
       <workItem from="1711545973939" duration="808000" />
-      <workItem from="1711548787620" duration="2299000" />
+      <workItem from="1711548787620" duration="3723000" />
+      <workItem from="1711726349278" duration="4420000" />
+      <workItem from="1712003500158" duration="3026000" />
+      <workItem from="1712012648809" duration="3011000" />
     </task>
     <task id="LOCAL-00001" summary="JUnit for Mr231_3Convert">
       <option name="closed" value="true" />
@@ -241,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711544669582</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Working build">
+      <option name="closed" value="true" />
+      <created>1711564965920</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711564965920</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +281,8 @@
     <MESSAGE value="GUI" />
     <MESSAGE value="The graphical interface is combined with the functional part" />
     <MESSAGE value="Build" />
-    <option name="LAST_COMMIT_MESSAGE" value="Build" />
+    <MESSAGE value="Working build" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
