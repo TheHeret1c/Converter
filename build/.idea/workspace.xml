@@ -9,16 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Working build">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/build_jar/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/build_jar/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b0fe2949-90af-4085-8d30-38f96a399cf6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b0fe2949-90af-4085-8d30-38f96a399cf6.xml" afterDir="false" />
+    <list default="true" id="17592a85-f40b-4e39-a83a-3f9cf1dec500" name="Changes" comment="Build and working docker">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Code.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_03_2024_16_13_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_03_2024_16_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/build_jar/build.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/build_jar/build.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../startApp/src/main/java/org/database/DBWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../startApp/src/main/java/org/database/DBWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +193,10 @@
       <workItem from="1711548787620" duration="3723000" />
       <workItem from="1711726349278" duration="4420000" />
       <workItem from="1712003500158" duration="3026000" />
-      <workItem from="1712012648809" duration="3011000" />
+      <workItem from="1712012648809" duration="4236000" />
+      <workItem from="1712142147261" duration="36000" />
+      <workItem from="1712173193134" duration="15000" />
+      <workItem from="1712173415135" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="JUnit for Mr231_3Convert">
       <option name="closed" value="true" />
@@ -257,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711564965920</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Build and working docker">
+      <option name="closed" value="true" />
+      <created>1712016277637</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712016277637</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +295,8 @@
     <MESSAGE value="The graphical interface is combined with the functional part" />
     <MESSAGE value="Build" />
     <MESSAGE value="Working build" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working build" />
+    <MESSAGE value="Build and working docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build and working docker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
