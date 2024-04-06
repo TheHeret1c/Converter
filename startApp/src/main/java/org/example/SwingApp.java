@@ -3,6 +3,8 @@ package org.example;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Класс для создания графического интерфейса Swing и обработки событий.
@@ -87,6 +89,10 @@ public class SwingApp extends JFrame {
         btnConvert.addActionListener(e -> {
             // Определяем выбранный тип ввода
             if (rbInput.isSelected()) {
+                if (!validateTtm(tfMessage.getText()) && !validateRsd(tfMessage.getText())) { // Проверка сообщения на валидность
+                    JOptionPane.showMessageDialog(null, "Введённое сообщение не соответствует формату!", "Ошибка", JOptionPane.PLAIN_MESSAGE);
+                    return;
+                }
                 showMessage(App.convertMessage(tfMessage.getText()));
             } else {
                 showMessage(App.convertMessage((String) cbMessages.getSelectedItem()));
@@ -105,45 +111,7 @@ public class SwingApp extends JFrame {
         // Добавление кнопки в контейнер и на форму
         btnPanel.add(btnConvert);
         this.getContentPane().add(BorderLayout.SOUTH, btnPanel);
-
-//        cbMessages = new JComboBox<>(messages.toArray());
-//
-//        Container container = this.getContentPane();
-//        container.setLayout(new GridLayout(4, 2, 2, 2));
-//        container.add(label);
-//        container.add(input);
-//
-//        ButtonGroup group = new ButtonGroup();
-//        group.add(rb1);
-//        group.add(rb2);
-//        container.add(rb1);
-//        rb1.setSelected(true);
-//        container.add(rb2);
-//
-//        container.add(chkbox);
-//
-//        btn.addActionListener(e -> {
-//            String message = "";
-//            message += "Button was pressed\n";
-//            message += "Text is " + input.getText() + "\n";
-//            message += (rb1.isSelected() ? "Radio 1" : "Radio 2") + " is selected!\n";
-//            message += "CheckBox is " + ((chkbox.isSelected()) ? "checked" : "unchecked");
-//            JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
-//        });
-//        container.add(btn);
-//        container.add(cbMessages);
     }
-
-//    class ButtonEventListener implements ActionListener {
-//        public void actionPerformed(ActionEvent e) {
-//            String message = "";
-//            message += "Button was pressed\n";
-//            message += "Text is " + input.getText() + "\n";
-//            message += (rb1.isSelected() ? "Radio 1" : "Radio 2") + " is selected!\n";
-//            message += "CheckBox is " + ((chkbox.isSelected()) ? "checked" : "unchecked");
-//            JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
-//        }
-//    }
 
     /**
      * Функция для отображения диалогового окна с конвертированным сообщением
@@ -151,5 +119,43 @@ public class SwingApp extends JFrame {
      */
     private void showMessage(StringBuilder sb) {
         JOptionPane.showMessageDialog(null, sb, "Сообщение", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    /**
+     * Функция для проверки соответствия введённого сообщения с шаблоном RSD
+     * @param message - TTM сообщение, введённое пользователем
+     * @return - true, если сообщение соответствует формату RSD, false, если нет
+     */
+    public static boolean validateRsd(String message) {
+        System.out.println("Message: " + message);
+        // Очистим сообщение от пробелов и символов новой строки
+        String cleanedMessage = message.replaceAll("\\s", "");
+        // Создание паттерна
+        String pattern = "\\$RARSD,\\d+[.]?\\d+?,\\d+[.]?\\d+?,\\d+[.]?\\d+?,\\d+[.]?\\d+?,,,,,\\d+[.]?\\d+?,\\d+[.]?\\d+?,\\d+[.]?\\d+?,[KN],[CHN],[SP]\\*\\w{1,2}";
+        Pattern p = Pattern.compile(pattern);
+        // Проверка на соответствие паттерну
+        Matcher m = p.matcher(cleanedMessage);
+        boolean result = m.find();
+        System.out.println("Validation RSD result: " + result);
+        return result;
+    }
+
+    /**
+     * Функция для проверки соответствия введённого сообщения с шаблоном TTM
+     * @param message - TTM сообщение, введённое пользователем
+     * @return - true, если сообщение соответствует формату TTM, false, если нет
+     */
+    public static boolean validateTtm(String message) {
+        System.out.println("Message: " + message);
+        // Удаление пробелов
+        String cleanedMessage = message.replaceAll("\\s", "");
+        // Создание паттерна
+        String pattern = "\\$RATTM,\\d+[.]?\\d+?,\\d+[.]?\\d+?,\\d+[.]?\\d+?,T,\\d+[.]?\\d+?,\\d+[.]?\\d+?,T,\\d+[.]?\\d+?,\\d+[.]?\\d+?,N,[bpd],[LQT],,\\d{6},A\\*\\w{1,2}";
+        Pattern p = Pattern.compile(pattern);
+        // Проверка на соответствие паттерну
+        Matcher m = p.matcher(cleanedMessage);
+        boolean result = m.find();
+        System.out.println("Validation TTM result: " + result);
+        return result;
     }
 }
